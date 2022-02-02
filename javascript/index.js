@@ -1,11 +1,37 @@
-const question = 'ゲーム市場、最も売れたゲーム機は次の内どれ？';
-const answers = [
-    'ニンテンドーDS', 
-    'プレステーション２', 
-    'ニンテンドースイッチ', 
-    'スーパーファミコン'
+const quiz = [
+    {
+        question: 'ゲーム市場、最も売れたゲーム機は次の内どれ？',
+        answers: [
+            'ニンテンドーDS', 
+            'プレステーション２', 
+            'ニンテンドースイッチ', 
+            'スーパーファミコン'
+        ],
+        correct: 'ニンテンドーDS'
+    },{
+        question: 'お酢に卵を殻ごといれると卵はどうなるでしょう？',
+        answers: [
+            '透明な卵になる', 
+            '鏡のようになんでもうつる卵になる', 
+            '卵が溶けてなくなる', 
+            '卵が石のように堅くなる'
+        ],
+        correct: '透明な卵になる'
+    },{
+        question: 'しゃっくりはある調味料をなめると止まります。ある調味料とはなんでしょう？',
+        answers: [
+            'お酢', 
+            '砂糖', 
+            '醤油', 
+            '塩'
+        ],
+        correct: '砂糖'
+    }
 ];
-const correct = 'ニンテンドーDS';
+const quizLength = quiz.length;
+let quizIndex = 0;
+
+
 
 const $button = document.getElementsByTagName('button')
 const buttonLength = $button.length;
