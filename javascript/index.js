@@ -31,28 +31,37 @@ const quiz = [
 const quizLength = quiz.length;
 let quizIndex = 0;
 
-
-
 const $button = document.getElementsByTagName('button')
 const buttonLength = $button.length;
 
 // クイズの問題文、選択肢を定義
 const setupQuiz = () => {
-    document.getElementById('js-question').textContent = question;
+    document.getElementById('js-question').textContent = quiz[quizIndex].question;
     let buttonIndex = 0;
     while(buttonIndex < buttonLength){
         // ここに命令を書く
-        $button[buttonIndex].textContent = answers[buttonIndex];
+        $button[buttonIndex].textContent = quiz[quizIndex].answers[buttonIndex];
         buttonIndex++;
     }
 }
 setupQuiz();
 
+
 const clickHndler = (e) => {
-    if (correct === e.target.textContent){
+    if (quiz[quizIndex].correct === e.target.textContent){
         window.alert('正解!');
     }else {
         window.alert('不正解!');
+    }
+
+    quizIndex++;
+
+    if(quizIndex < quizLength){
+        // 問題数がまだあればこちらを実行
+        setupQuiz();
+    } else {
+        // 問題数がもうなければこちらを実行
+        window.alert('終了!');
     }
 };
 
